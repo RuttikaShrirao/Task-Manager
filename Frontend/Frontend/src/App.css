@@ -1,0 +1,22 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.form{
+  display: flex;
+    flex-direction: column;
+    padding: 4em 3em;
+    border: 2px solid rgb(219, 219, 219);
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.Top-buttons{
+  float: inline-end;
+  display: flex;
+  gap: 43px;
+  margin-bottom: 5vh;
+}
+

@@ -1,0 +1,19 @@
+.Drawer{
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.Drawer input{
+    padding: 1rem;
+    font-size: large;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+  border: 1px solid gray ;
+}
+
+.Drawer-description{
+    height: 10vh;
+}
+
+
