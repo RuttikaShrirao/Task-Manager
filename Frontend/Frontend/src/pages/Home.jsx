@@ -2,6 +2,7 @@ import * as React from 'react';
 // import requestAuthenticatedAPI from '../utils/utilityFuncs'
 import {API_URL,TOKEN_KEY} from '../utils/constants'
 
+
 // table
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
@@ -19,7 +20,7 @@ import Button from '@mui/material/Button';
 
 // css
 import "../CSS/Drawer.css"
-import { Navigate } from 'react-router-dom';
+
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -35,15 +36,11 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   '&:nth-of-type(odd)': {
     backgroundColor: theme.palette.action.hover,
   },
-  // hide last border
   '&:last-child td, &:last-child th': {
     border: 0,
   },
 }));
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
 
 export default function Home() {
 
@@ -55,13 +52,14 @@ export default function Home() {
                                                   description:'',
                                                   date:''
                                                 })
-
-  // drawer
+                                                
+// drawer
   const [open, setOpen] = React.useState(false);
 
   //------------- functions-------------//
   // drawer
   const toggleDrawer = (newOpen) => () => {
+    console.log(newOpen)
     setOpen(newOpen);
   };
 // Api data
@@ -105,8 +103,7 @@ const createTask=()=>{
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
           }
-      }
-      )
+      })
      .then(res=>res.json())
      .then(data=>{
       console.log(data.status_code)
@@ -132,14 +129,14 @@ const deleteHandler=()=>{
 
 
   const DrawerList = (
-    <Box  sx={{ width: 500 }} role="presentation" onClick={toggleDrawer(true)}>
+    <Box  role="presentation" onClick={toggleDrawer(true)}>
     <div className='Drawer'>
     <h2>Title</h2>
       <input onChange={titleHandler} placeholder='Title'/>
       <h3>Description</h3>
       <input className='Drawer-description' onChange={descriptionHandler}/>
       <input type='date' onChange={dateHandler} placeholder='Date' />
-      <Button sx={{padding:'1rem', marginTop:'5vh'}} variant="contained" href="#contained-buttons" onClick={createTask}>
+      <Button  variant="contained" href="#contained-buttons" onClick={createTask}>
         Add
       </Button>
       </div>
@@ -152,8 +149,9 @@ const deleteHandler=()=>{
   },[])
 
   return (
-    <div style={{ height: 400}}>
+    <div >
      <Button onClick={toggleDrawer(true)}>+Create Task</Button>
+   
       <Drawer open={open} onClose={toggleDrawer(false)}  anchor={'right'}>
         {DrawerList}
       </Drawer>

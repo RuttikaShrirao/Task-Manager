@@ -20,7 +20,7 @@ const SECRET_KEY="taskmanagerapi"
 
 
 // registration
-// app.use('/api/registration', authrouter)
+
 app.post('/api/registration', async(req,res)=>{
   const {username, password}= req.body
   try {
@@ -38,7 +38,7 @@ app.post('/api/registration', async(req,res)=>{
           const hashedPassword=  await bcrypt.hash(newpassword,salt)
           try{
             const user = await authModel.create({username:username, password:hashedPassword})
-            console.log(username,"uuuuuu",hashedPassword)
+            console.log(username,hashedPassword)
             user.save()
             reponseFormat(res, status_code = 200, msg = "you are registered..");
           }

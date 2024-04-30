@@ -80,7 +80,6 @@ const handleMouseDownPassword = (event) => {
           />
         </FormControl>
         <Button variant="contained" onClick={registrationHandler}>registration</Button>
-        {/* <Button variant="contained" >log in</Button> */}
      <p>{msg}</p>
      </div>
   );
