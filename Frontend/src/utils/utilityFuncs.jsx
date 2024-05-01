@@ -1,5 +1,3 @@
-
-
 const requestAuthenticatedAPI =(url, body, method )=>{
     const token = localStorage.getItem('token');
 
