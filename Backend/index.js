@@ -59,6 +59,7 @@ app.post('/api/registration', async(req,res)=>{
 // login
 app.post('/api/login',async(req,res)=>{
   const {username, password}= req.body
+  console.log(username,password,"oooooooooooooo")
   try {
     if(((username).length==0) || ((req.body.password).length==0)){
       reponseFormat(res, status_code = 400, msg = "Please fill Details..");
