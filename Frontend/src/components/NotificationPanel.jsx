@@ -40,7 +40,7 @@ const data = [
     updatedAt: "2024-02-09T09:32:26.810Z",
     __v: 0,
   },
-];
+]
 const ICONS = {
   alert: (
     <HiBellAlert className='h-5 w-5 text-gray-600 group-hover:text-indigo-600' />
@@ -95,7 +95,7 @@ const NotificationPanel = () => {
         >
           <Popover.Panel className='absolute -right-16 md:-right-2 z-10 mt-5 flex w-screen max-w-max  px-4'>
             {({ close }) =>
-              data?.length > 0 && (
+              data.length > 0 && (
                 <div className='w-screen max-w-md flex-auto overflow-hidden rounded-3xl bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5'>
                   <div className='p-4'>
                     {data?.slice(0, 5).map((item, index) => (
@@ -104,7 +104,7 @@ const NotificationPanel = () => {
                         className='group relative flex gap-x-4 rounded-lg p-4 hover:bg-gray-50'
                       >
                         <div className='mt-1 h-8 w-8 flex items-center justify-center rounded-lg bg-gray-200 group-hover:bg-white'>
-                          {ICONS[item.notiType]}
+                          {[item.notiType]}
                         </div>
 
                         <div

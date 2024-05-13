@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { user } from "../../assets/Data";
-console.log(user)
+// console.log(user)
 // const user=""
 const initialState = {
   user: localStorage.getItem("userInfo") ? JSON.parse(localStorage.getItem("userInfo")) : user,
